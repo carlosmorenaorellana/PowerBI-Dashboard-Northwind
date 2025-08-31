@@ -1,0 +1,35 @@
+### 1. Medidas de Agregación y Métricas Clave
+
+-- Ingresos Totales
+Total Revenues = SUM('order_details'[revenues])
+
+-- Costo Total de Envío
+Total Freight = SUM(orders[freight])
+
+-- Beneficio
+Profit = [Total Revenues] - [Total Freight]
+
+-- Margen de Beneficio
+Profit Margin = DIVIDE([Profit], [Total Revenues])
+
+### 2. Medidas de Conteo y Eficiencia
+
+-- Pedidos Enviados Totales
+Total Shipped Orders = COUNTROWS(FILTER(orders, NOT(ISBLANK(orders[shippedDate]))))
+
+-- Pedidos No Enviados
+Non-Shipped Orders = COUNTROWS(FILTER(orders, ISBLANK(orders[shippedDate])))
+
+-- Porcentaje de Pedidos No Enviados
+Total Non-Shipped Orders % = DIVIDE([Non-Shipped Orders], [Total Shipped Orders] + [Non-Shipped Orders])
+
+-- Tiempo Operativo KPI
+Operating Time KPI = AVERAGE(orders[operatingTime])
+
+### 3. Medidas para Análisis de Comportamiento del Cliente
+
+-- Precio Promedio por Unidad
+Average Price Per Unit = AVERAGE(order_details[unitPrice])
+
+-- Cantidad Promedio por Pedido
+Average Quantity Per Order = AVERAGEX(orders, SUM(related(order_details[quantity])))
