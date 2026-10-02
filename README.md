@@ -66,11 +66,11 @@ northwind\_traders\_analysis
 
 \* \*\*Valores Nulos en Empleados (`reportsTo`):\*\* Se identificó un valor nulo en la columna `reportsTo` correspondiente al empleado con `employeeID` 2 (Andrew Fuller, \*Vice President Sales\*). Tras analizar la estructura de la jerarquía y los cargos (\*titles\*), se concluyó que no existe un cargo superior al de Vicepresidente de Ventas, por lo que el valor nulo se mantuvo intacto de forma intencionada para denotar la cúspide de la estructura organizativa.
 
-\* \*\*Valores Nulos en Envíos (`orders.shippedDate`):\*\*
-
-\* Se detectaron valores nulos en la columna `shippedDate` (\~3% de los registros), interpretados a nivel operativo como pedidos no enviados (\*non-shipped orders\*) que pueden generar costes adicionales o pérdidas. Se mantuvieron sin alteraciones.
+\* \*\*Valores Nulos en Envíos (`orders.shippedDate`):\*\* Se detectaron valores nulos en la columna `shippedDate` (\~3% de los registros), interpretados a nivel operativo como pedidos no enviados (\*non-shipped orders\*) que pueden generar costes adicionales o pérdidas. Se mantuvieron sin alteraciones.
 
 \* \*\*Adición de Indicador (`nonShippedOrders`):\*\* Se creó una columna condicional personalizada para aislar este comportamiento:
+
+
 
 ```powerquery
 
@@ -82,13 +82,7 @@ northwind\_traders\_analysis
 
 
 
-
-
 Esta métrica permite evaluar de forma directa el impacto de los pedidos no enviados en la operativa del negocio.
-
-
-
-
 
 
 
@@ -108,6 +102,8 @@ Esta métrica permite evaluar de forma directa el impacto de los pedidos no envi
 
 \* \*\*Mapeo Geográfico por Regiones (`country\_regions`):\*\* Se creó una tabla auxiliar duplicando el campo `country` de los clientes y añadiendo una columna condicional para agrupar los países en tres grandes regiones estratégicas:
 
+
+
 ```powerquery
 
 = if \[country] = "USA" or \[country] = "Canada" or \[country] = "Mexico" then "Americas"
@@ -119,8 +115,6 @@ else "EMEA"
 
 
 ```
-
-
 
 
 
@@ -166,6 +160,8 @@ Se estructuraron columnas calculadas y medidas optimizadas para garantizar un re
 
 \* \*\*`revenues` (Columna Calculada):\*\* Calcula los ingresos netos por línea de detalle aplicando la cantidad, el precio unitario y el descuento:
 
+
+
 ```dax
 
 revenues = (order\_details\[unitPrice] \* order\_details\[quantity]) \* (1 - order\_details\[discount])
@@ -173,8 +169,6 @@ revenues = (order\_details\[unitPrice] \* order\_details\[quantity]) \* (1 - ord
 
 
 ```
-
-
 
 
 
@@ -188,6 +182,12 @@ revenues = (order\_details\[unitPrice] \* order\_details\[quantity]) \* (1 - ord
 
 \* \*\*`Profit` y `Profit Margin`:\*\* Cálculo dinámico de la rentabilidad considerando los costos de flete (\*freight\*):
 
+
+
+
+
+
+
 ```dax
 
 Profit = SUMX('order\_details', 'order\_details'\[revenues]) - RELATED('orders'\[freight])
@@ -200,17 +200,11 @@ Profit Margin = \[Profit] / \[Total Revenues]
 
 
 
-
-
 \* \*\*`Operating Time KPI`:\*\* Promedio del tiempo de procesamiento operativo.
 
 \* \*\*`Total Freight on Non-Shipped Orders`:\*\* Cuantificación del impacto financiero de los envíos no realizados mediante `CALCULATE` y `ISBLANK`.
 
 \* Promedios de precios y cantidades mediante `AVERAGEX` para evaluar el comportamiento de compra.
-
-
-
-
 
 \* \*\*Organización del Modelo:\*\* Todas las medidas se centralizaron en una tabla auxiliar de gestión denominada `kpi`.
 
