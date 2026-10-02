@@ -36,6 +36,7 @@ northwind_traders_analysis
 ```
     = if [shippedDate] = null then 1 else 0
 ```
+
     Esta métrica permite evaluar de forma directa el impacto de los pedidos no enviados en la operativa del negocio.
 
 ---
