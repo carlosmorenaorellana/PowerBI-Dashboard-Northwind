@@ -12,6 +12,34 @@ Este proyecto implementa una solución integral de análisis de ventas y rendimi
 
 
 
+¡Ah, perdona! Coño, claro, le estabas dando al botón general de \*\*"Copiar respuesta"\*\* de la interfaz del chat en vez de al botoncito de copiar que sale arriba a la derecha dentro de la caja de código. Si usas el botón general de la interfaz, te copia absolutamente todo el texto plano de mi mensaje (con las explicaciones y los bloques de código abiertos) en lugar de darte el archivo `.md` limpio.
+
+
+
+El truco para que le des a \*\*ese botón\*\* y te sirva directamente es que te voy a dar la respuesta \*\*exclusivamente\*\* dentro de un único bloque de código Markdown. De esta forma, al pulsar el botón de copiar de la esquina superior derecha del bloque, se copiará de forma limpia solo el código del archivo, sin texto alrededor.
+
+
+
+Aquí lo tienes listo para que le des al botón y lo pegues tal cual:
+
+
+
+```markdown
+
+\# Análisis de Datos de Negocio: Estudio de Caso Northwind Traders
+
+
+
+\## Executive Summary
+
+Este proyecto implementa una solución integral de análisis de ventas y rendimiento de negocio para \*\*Northwind Traders\*\* utilizando \*\*Power BI\*\*. El objetivo principal es preparar, limpiar y modelar los datos transaccionales para proporcionar a la directiva una visión holística y accionable en las áreas de finanzas, operaciones y ventas.
+
+
+
+\---
+
+
+
 \## Tech Stack
 
 \* \*\*Business Intelligence \& Modelado:\*\* Power BI (Power Query, DAX)
@@ -273,4 +301,16 @@ El informe ejecutivo se divide en tres paneles estratégicos diseñados para cub
 \* El producto \*\*"Côte de Blaye"\*\* representa un hito fundamental, acaparando el 53% de los ingresos de su categoría (\*Beverages\*), más del 11% de los ingresos totales de la compañía y un margen de beneficio del \*\*95%\*\*.
 
 \* Se identificó que ciertos productos descontinuados de la categoría \*Meat \& Poultry\* (como \*Thüringer Rostbratwurst\*) poseían alta rentabilidad y márgenes superiores al 90%, sugiriendo que su retirada pudo mermar el crecimiento potencial de los ingresos.
+
+
+
+
+
+
+
+```
+
+
+
+```
 
