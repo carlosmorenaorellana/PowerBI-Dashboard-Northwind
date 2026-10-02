@@ -8,20 +8,6 @@ Este proyecto implementa una solución integral de análisis de ventas y rendimi
 
 
 
-\---
-
-
-
-¡Ah, perdona! Coño, claro, le estabas dando al botón general de \*\*"Copiar respuesta"\*\* de la interfaz del chat en vez de al botoncito de copiar que sale arriba a la derecha dentro de la caja de código. Si usas el botón general de la interfaz, te copia absolutamente todo el texto plano de mi mensaje (con las explicaciones y los bloques de código abiertos) en lugar de darte el archivo `.md` limpio.
-
-
-
-El truco para que le des a \*\*ese botón\*\* y te sirva directamente es que te voy a dar la respuesta \*\*exclusivamente\*\* dentro de un único bloque de código Markdown. De esta forma, al pulsar el botón de copiar de la esquina superior derecha del bloque, se copiará de forma limpia solo el código del archivo, sin texto alrededor.
-
-
-
-Aquí lo tienes listo para que le des al botón y lo pegues tal cual:
-
 
 
 ```markdown
