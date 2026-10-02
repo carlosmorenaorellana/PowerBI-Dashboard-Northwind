@@ -13,6 +13,8 @@ Este proyecto implementa una solución integral de análisis de ventas y rendimi
 ---
 
 ## Project Structure
+
+```
 northwind_traders_analysis
 ├── data                    # Archivos CSV originales de origen
 ├── executive_summary       # (Ignorado mediante .gitignore) Informes ejecutivos y resúmenes
@@ -31,7 +33,9 @@ northwind_traders_analysis
 * **Valores Nulos en Envíos (orders.shippedDate):**
   * Se detectaron valores nulos en la columna `shippedDate` (~3% de los registros), interpretados a nivel operativo como pedidos no enviados (`non-shipped orders`) que pueden generar costes adicionales o pérdidas. Se mantuvieron sin alteraciones.
   * **Adición de Indicador (`nonShippedOrders`):** Se creó una columna condicional personalizada para aislar este comportamiento:
+```
     = if [shippedDate] = null then 1 else 0
+```
     Esta métrica permite evaluar de forma directa el impacto de los pedidos no enviados en la operativa del negocio.
 
 ---
@@ -45,9 +49,11 @@ northwind_traders_analysis
 * **Tipado de Fechas y Numéricos:** Las columnas de fecha (`orderDate`, `requiredDate`, `shippedDate`) se tiparon correctamente para habilitar la inteligencia de tiempo en Power BI. Asimismo, los identificadores y claves foráneas se estandarizaron como números enteros.
 
 * **Mapeo Geográfico por Regiones (`country_regions`):** Se creó una tabla auxiliar duplicando el campo `country` de los clientes y añadiendo una columna condicional para agrupar los países en tres grandes regiones estratégicas:
+```
   = if [country] = "USA" or [country] = "Canada" or [country] = "Mexico" then "Americas"
   else if [country] = "Argentina" or [country] = "Brazil" or [country] = "Venezuela" then "LATAM"
   else "EMEA"
+```
 
 * **Gestión de Productos Descontinuados (`products.discontinued`):** Se conservaron los productos con estado discontinuado (1) por su relevancia histórica en los estados financieros e ingresos pasados. Adicionalmente, se creó una columna calculada `productStatus` para etiquetar intuitivamente los productos como "Discontinued" o "In Production".
 
@@ -74,7 +80,9 @@ El modelo se estructuró bajo un esquema de estrella optimizado para el análisi
 Se estructuraron columnas calculadas y medidas optimizadas para garantizar un rendimiento fluido del modelo:
 
 * **`revenues` (Columna Calculada):** Calcula los ingresos netos por línea de detalle aplicando la cantidad, el precio unitario y el descuento:
+```
   revenues = (order_details[unitPrice] * order_details[quantity]) * (1 - order_details[discount])
+```
 
 * **`region` (Columna Calculada):** Enriquecimiento de clientes mediante la función `LOOKUPVALUE` contra la tabla auxiliar de regiones geográficas.
 
@@ -83,8 +91,12 @@ Se estructuraron columnas calculadas y medidas optimizadas para garantizar un re
 * **Medidas Financieras Principales:**
   * **Total Revenues:** Suma optimizada de los ingresos netos.
   * **Profit y Profit Margin:** Cálculo dinámico de la rentabilidad considerando los costos de flete (`freight`):
+```
     Profit = SUMX('order_details', 'order_details'[revenues]) - RELATED('orders'[freight])
+```
+```
     Profit Margin = [Profit] / [Total Revenues]
+```
   * **Operating Time KPI:** Promedio del tiempo de procesamiento operativo.
   * **Total Freight on Non-Shipped Orders:** Cuantificación del impacto financiero de los envíos no realizados mediante `CALCULATE` y `ISBLANK`.
   * Promedios de precios y cantidades mediante `AVERAGEX` para evaluar el comportamiento de compra.
