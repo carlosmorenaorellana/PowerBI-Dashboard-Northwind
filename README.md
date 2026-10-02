@@ -21,7 +21,7 @@ northwind_traders_analysis
 ├── power_bi                # Modelos y paneles de Power BI
 ├── outputs                 # Activos y exportaciones de informes
 └── README.md               # Documentación completa del proyecto
-
+```
 ---
 
 ## 1. Calidad de Datos y Análisis de Valores Nulos
