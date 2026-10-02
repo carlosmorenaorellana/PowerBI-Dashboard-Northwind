@@ -30,7 +30,7 @@ Este proyecto implementa una solución integral de análisis de ventas y rendimi
 
 
 
-```text
+```
 
 northwind\_traders\_analysis
 
