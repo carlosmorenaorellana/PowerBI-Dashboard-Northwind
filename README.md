@@ -1,8 +1,8 @@
-\# Análisis de Datos de Negocio: Estudio de Caso Northwind Traders
+\#Análisis de Datos de Negocio: Estudio de Caso Northwind Traders
 
 
 
-\## Executive Summary
+\##Executive Summary
 
 
 
