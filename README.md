@@ -1,5 +1,3 @@
-```markdown
-
 \# Análisis de Datos de Negocio: Estudio de Caso Northwind Traders
 
 
