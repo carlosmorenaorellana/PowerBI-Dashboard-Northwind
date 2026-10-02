@@ -35,7 +35,6 @@ northwind_traders_analysis
   * **Adición de Indicador (`nonShippedOrders`):** Se creó una columna condicional personalizada para aislar este comportamiento:
 ```
     = if [shippedDate] = null then 1 else 0
-```
 
     Esta métrica permite evaluar de forma directa el impacto de los pedidos no enviados en la operativa del negocio.
 
