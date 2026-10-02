@@ -42,9 +42,9 @@ northwind\_traders\_analysis
 
 ├── raw\_data                # Archivos CSV originales de origen
 
-├─── data\_dictionary.csv     # (Ignorado mediante .gitignore) Archivos CSV originales de origen
+├── data\_dictionary.csv     # (Ignorado mediante .gitignore) Diccionario de datos
 
-├─── dax\_scripts.dax         # Archivos CSV originales de origen
+├── dax\_scripts.dax         # Script con las medidas y columnas DAX
 
 └── README.md               # Documentación completa del proyecto
 
@@ -279,4 +279,16 @@ El informe ejecutivo se divide en tres paneles estratégicos diseñados para cub
 \* El producto \*\*"Côte de Blaye"\*\* representa un hito fundamental, acaparando el 53% de los ingresos de su categoría (\*Beverages\*), más del 11% de los ingresos totales de la compañía y un margen de beneficio del \*\*95%\*\*.
 
 \* Se identificó que ciertos productos descontinuados de la categoría \*Meat \& Poultry\* (como \*Thüringer Rostbratwurst\*) poseían alta rentabilidad y márgenes superiores al 90%, sugiriendo que su retirada pudo mermar el crecimiento potencial de los ingresos.
+
+
+
+
+
+
+
+```
+
+
+
+```
 
