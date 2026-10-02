@@ -1,3 +1,5 @@
+```
+
 \# Análisis de Datos de Negocio: Estudio de Caso Northwind Traders
 
 
@@ -283,10 +285,6 @@ El informe ejecutivo se divide en tres paneles estratégicos diseñados para cub
 
 
 
-
-
-
-```
 
 
 
