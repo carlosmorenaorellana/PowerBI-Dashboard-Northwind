@@ -282,15 +282,3 @@ El informe ejecutivo se divide en tres paneles estratégicos diseñados para cub
 
 \* Se identificó que ciertos productos descontinuados de la categoría \*Meat \& Poultry\* (como \*Thüringer Rostbratwurst\*) poseían alta rentabilidad y márgenes superiores al 90%, sugiriendo que su retirada pudo mermar el crecimiento potencial de los ingresos.
 
-
-
-
-
-
-
-```
-
-
-
-```
-
