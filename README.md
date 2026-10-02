@@ -34,8 +34,8 @@ northwind_traders_analysis
   * Se detectaron valores nulos en la columna `shippedDate` (~3% de los registros), interpretados a nivel operativo como pedidos no enviados (`non-shipped orders`) que pueden generar costes adicionales o pérdidas. Se mantuvieron sin alteraciones.
   * **Adición de Indicador (`nonShippedOrders`):** Se creó una columna condicional personalizada para aislar este comportamiento:
 ```
-    = if [shippedDate] = null then 1 else 0```
-
+    = if [shippedDate] = null then 1 else 0
+```
     Esta métrica permite evaluar de forma directa el impacto de los pedidos no enviados en la operativa del negocio.
 
 ---
