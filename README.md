@@ -38,7 +38,6 @@ northwind_traders_analysis
 ```
     Esta métrica permite evaluar de forma directa el impacto de los pedidos no enviados en la operativa del negocio.
 
----
 
 ## 2. Enriquecimiento de Datos y Transformaciones
 
