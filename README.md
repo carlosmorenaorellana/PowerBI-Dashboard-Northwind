@@ -8,10 +8,6 @@ Este proyecto implementa una solución integral de análisis de ventas y rendimi
 
 
 
-
-
-```markdown
-
 \# Análisis de Datos de Negocio: Estudio de Caso Northwind Traders
 
 
@@ -287,14 +283,6 @@ El informe ejecutivo se divide en tres paneles estratégicos diseñados para cub
 \* El producto \*\*"Côte de Blaye"\*\* representa un hito fundamental, acaparando el 53% de los ingresos de su categoría (\*Beverages\*), más del 11% de los ingresos totales de la compañía y un margen de beneficio del \*\*95%\*\*.
 
 \* Se identificó que ciertos productos descontinuados de la categoría \*Meat \& Poultry\* (como \*Thüringer Rostbratwurst\*) poseían alta rentabilidad y márgenes superiores al 90%, sugiriendo que su retirada pudo mermar el crecimiento potencial de los ingresos.
-
-
-
-
-
-
-
-```
 
 
 
